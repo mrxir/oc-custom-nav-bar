@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Controller-->
         <scene sceneID="kTv-Lg-c75">
             <objects>
                 <viewController id="sHM-39-cWc" customClass="ViewController" sceneMemberID="viewController">
@@ -55,7 +55,7 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <state key="normal" title="返回" image="public_backItem.png"/>
+                                                                <state key="normal" title="返回"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSe-Mz-JRs">
                                                                 <rect key="frame" x="50" y="0.0" width="50" height="33"/>
@@ -88,6 +88,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="backButton" destination="apI-iS-QBL" id="pOM-O2-iQu"/>
+                                    <outlet property="controller" destination="sHM-39-cWc" id="rGC-Vy-9qO"/>
                                     <outlet property="exitButton" destination="vSe-Mz-JRs" id="P15-x6-IUo"/>
                                 </connections>
                             </view>
@@ -109,10 +110,9 @@
             </objects>
             <point key="canvasLocation" x="89" y="29"/>
         </scene>
-        <!--View Controller-->
+        <!--Controller-->
         <scene sceneID="nMZ-d7-DAE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QCz-hX-NBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ggU-mU-wBx" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r6O-6u-T4m"/>
@@ -142,7 +142,7 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <state key="normal" title="返回" image="public_backItem.png"/>
+                                                                <state key="normal" title="返回"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIH-z0-eNz">
                                                                 <rect key="frame" x="50" y="0.0" width="50" height="33"/>
@@ -175,6 +175,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="backButton" destination="pmz-xh-BhQ" id="yFv-42-9iX"/>
+                                    <outlet property="controller" destination="ggU-mU-wBx" id="bfq-1Z-Gxo"/>
                                     <outlet property="exitButton" destination="tIH-z0-eNz" id="VFT-Ne-dmf"/>
                                 </connections>
                             </view>
@@ -204,6 +205,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCz-hX-NBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="898" y="29"/>
         </scene>
@@ -226,9 +228,6 @@
             <point key="canvasLocation" x="-668" y="29"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="public_backItem.png" width="10" height="17"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ORF-nx-L4m"/>
         <segue reference="Ozv-zx-7Cr"/>

@@ -21,4 +21,6 @@
 
 @property (nonatomic, weak) IBOutlet UIView *contentView;
 
+@property (nonatomic, assign) IBOutlet UIViewController *controller;
+
 @end

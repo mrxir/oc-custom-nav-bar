@@ -8,12 +8,19 @@
 
 #import "MRNavigationBar.h"
 
+@interface MRNavigationBar ()<UIGestureRecognizerDelegate>
+
+@end
+
 @implementation MRNavigationBar
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     
+    [self.backButton setImage:[UIImage imageWithContentsOfFile:[self pathForResource:@"back" type:@"png"]] forState:UIControlStateNormal];
+    
+    self.controller.navigationController.interactivePopGestureRecognizer.delegate = (id)self.controller;
     
 }
 
@@ -24,5 +31,16 @@
     // Drawing code
 }
 */
+
+#pragma mark - unit
+
+- (NSString *)pathForResource:(NSString *)resource type:(NSString *)type
+{
+    NSBundle *imageBundle = nil;
+    NSBundle *bundle = [NSBundle bundleForClass:[MRNavigationBar class]];
+    NSURL *url = [bundle URLForResource:@"MRNavigationBar" withExtension:@"bundle"];
+    imageBundle = [NSBundle bundleWithURL:url];
+    return [imageBundle pathForResource:resource ofType:type];
+}
 
 @end
