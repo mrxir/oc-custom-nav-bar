@@ -95,7 +95,6 @@
 		67F0FF861FED147C00E533EE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				67F0FF8E1FED227F00E533EE /* images */,
 				67F0FF871FED14A100E533EE /* MRNavigationBar.h */,
 				67F0FF881FED14A100E533EE /* MRNavigationBar.m */,
 				67F0FF8A1FED14BC00E533EE /* MRNavigationBar.xib */,
@@ -107,13 +106,6 @@
 				67F0FF941FED227F00E533EE /* public_navigation_close@3x.png */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		67F0FF8E1FED227F00E533EE /* images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
