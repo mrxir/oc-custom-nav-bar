@@ -99,6 +99,12 @@
 				67F0FF871FED14A100E533EE /* MRNavigationBar.h */,
 				67F0FF881FED14A100E533EE /* MRNavigationBar.m */,
 				67F0FF8A1FED14BC00E533EE /* MRNavigationBar.xib */,
+				67F0FF8F1FED227F00E533EE /* public_backItem.png */,
+				67F0FF901FED227F00E533EE /* public_backItem@2x.png */,
+				67F0FF911FED227F00E533EE /* public_backItem@3x.png */,
+				67F0FF921FED227F00E533EE /* public_navigation_close.png */,
+				67F0FF931FED227F00E533EE /* public_navigation_close@2x.png */,
+				67F0FF941FED227F00E533EE /* public_navigation_close@3x.png */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -106,12 +112,6 @@
 		67F0FF8E1FED227F00E533EE /* images */ = {
 			isa = PBXGroup;
 			children = (
-				67F0FF8F1FED227F00E533EE /* public_backItem.png */,
-				67F0FF901FED227F00E533EE /* public_backItem@2x.png */,
-				67F0FF911FED227F00E533EE /* public_backItem@3x.png */,
-				67F0FF921FED227F00E533EE /* public_navigation_close.png */,
-				67F0FF931FED227F00E533EE /* public_navigation_close@2x.png */,
-				67F0FF941FED227F00E533EE /* public_navigation_close@3x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
