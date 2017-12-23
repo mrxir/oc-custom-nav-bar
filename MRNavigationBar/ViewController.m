@@ -8,7 +8,13 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "MRNavigationBar.h"
+
+@interface ViewController ()<UIWebViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
+
+@property (nonatomic, strong) UISearchBar *searchBar;
 
 @end
 
@@ -19,9 +25,17 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    self.webView.delegate = self;
+    
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
 
 }
 
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    NSLog(@"%s", __FUNCTION__);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
