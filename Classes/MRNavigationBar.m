@@ -22,9 +22,43 @@
 
 @implementation MRNavigationBar
 
+- (void)setTitle:(NSString *)title
+{
+    _title = title;
+    
+    self.barView.systemBar.topItem.title = _title;
+}
+
+- (void)setTitleColor:(UIColor *)titleColor
+{
+    _titleColor = titleColor;
+    
+    NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
+    titleTextAttributes[NSForegroundColorAttributeName] = _titleColor;
+    titleTextAttributes[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17];
+    self.barView.systemBar.titleTextAttributes = titleTextAttributes;
+
+}
+
+- (void)setTintColor:(UIColor *)tintColor
+{
+    _tintColor = tintColor;
+    
+    self.barView.systemBar.tintColor = _tintColor;
+}
+
 - (void)willMoveToWindow:(UIWindow *)newWindow
 {
     [super willMoveToWindow:newWindow];
+    
+    NSString *title = self.title ? self.title : self.controller.title;
+    
+    if (!title) title = @"Title";
+    
+    [self setTitle:title];
+    
+    [self.barView.backButton setTitleColor:self.barView.systemBar.tintColor forState:UIControlStateNormal];
+    [self.barView.exitButton setTitleColor:self.barView.systemBar.tintColor forState:UIControlStateNormal];
     
     [self reviseNavigationBarItems];
 }
@@ -51,7 +85,7 @@
     
     [self.barView.exitButton addTarget:self action:@selector(touchDownInside:) forControlEvents:UIControlEventTouchDragInside|UIControlEventTouchDown];
     [self.barView.exitButton addTarget:self action:@selector(touchDownOutSide:) forControlEvents:UIControlEventTouchDragOutside|UIControlEventTouchUpInside|UIControlEventTouchCancel];
-
+    
     [self.controller.view bringSubviewToFront:self];
 }
 
@@ -100,9 +134,13 @@
     
     // find nvaigation child view controller
     if (self.controller.navigationController.viewControllers.count > 1) {
-        self.barView.backButton.hidden = NO;
+        if (self.controller.navigationController.topViewController == self.controller) {
+            self.barView.backButton.hidden = NO;
+        }
     } else {
-        self.barView.backButton.hidden = YES;
+        if (self.controller.navigationController.topViewController == self.controller) {
+            self.barView.backButton.hidden = YES;
+        }
     }
 }
 

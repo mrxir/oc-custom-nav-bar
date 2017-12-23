@@ -24,6 +24,10 @@
 
 @property (nonatomic, copy) NSString *title;
 
+@property (nonatomic, strong) UIColor *titleColor;
+
+@property (nonatomic, strong) UIColor *tintColor;
+
 @property (nonatomic, weak) IBOutlet _BarView *barView;
 
 @property (nonatomic, assign) IBOutlet UIViewController *controller;
