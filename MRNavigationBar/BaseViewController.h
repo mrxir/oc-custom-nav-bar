@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  BaseViewController.h
 //  MRNavigationBar
 //
-//  Created by MrXir on 2017/12/22.
+//  Created by MR on 2017/12/24.
 //  Copyright © 2017年 MRXIR Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BaseViewController : UIViewController
 
 @end
-

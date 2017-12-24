@@ -16,6 +16,8 @@
 
 @property (nonatomic, assign) id<UIWebViewDelegate> originalWebViewDelegate;
 
+@property (nonatomic, assign) id<UIWebViewDelegate> webViewDelegate;
+
 @property (nonatomic, weak) __kindof UIWebView *webView;
 
 @end
@@ -51,53 +53,32 @@
 {
     [super willMoveToWindow:newWindow];
     
-    NSString *title = self.title ? self.title : self.controller.title;
-    
+    NSString *title = nil;
+    if (self.barView.systemBar.topItem.title) title = self.barView.systemBar.topItem.title;
+    if (self.controller.title) title = self.controller.title;
     if (!title) title = @"Title";
     
     [self setTitle:title];
     
-    [self.barView.backButton setTitleColor:self.barView.systemBar.tintColor forState:UIControlStateNormal];
-    [self.barView.exitButton setTitleColor:self.barView.systemBar.tintColor forState:UIControlStateNormal];
-    
     [self reviseNavigationBarItems];
+   
 }
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     
-    self.controller.navigationController.interactivePopGestureRecognizer.delegate = (id)self.controller;
-    
     self.barView.systemBar.translucent = NO;
     self.barView.systemBar.barTintColor = self.backgroundColor;
     
-    UIImage *backImage = [[UIImage imageWithContentsOfFile:[self pathForResource:@"back" type:@"png"]] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *backImage = [UIImage imageWithContentsOfFile:[self pathForResource:@"back" type:@"png"]];
     
     [self.barView.backButton setImage:backImage forState:UIControlStateNormal];
-    [self.barView.backButton setImage:backImage forState:UIControlStateHighlighted];
     
     [self.barView.backButton addTarget:self action:@selector(didClickBackButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.barView.exitButton addTarget:self action:@selector(didClickExitButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.barView.backButton addTarget:self action:@selector(touchDownInside:) forControlEvents:UIControlEventTouchDragInside|UIControlEventTouchDown];
-    [self.barView.backButton addTarget:self action:@selector(touchDownOutSide:) forControlEvents:UIControlEventTouchDragOutside|UIControlEventTouchUpInside|UIControlEventTouchCancel];
-    
-    [self.barView.exitButton addTarget:self action:@selector(touchDownInside:) forControlEvents:UIControlEventTouchDragInside|UIControlEventTouchDown];
-    [self.barView.exitButton addTarget:self action:@selector(touchDownOutSide:) forControlEvents:UIControlEventTouchDragOutside|UIControlEventTouchUpInside|UIControlEventTouchCancel];
-    
     [self.controller.view bringSubviewToFront:self];
-}
-
-
-- (void)touchDownInside:(UIButton *)button
-{
-    button.alpha = 0.5;
-}
-
-- (void)touchDownOutSide:(UIButton *)button
-{
-    button.alpha = 1;
 }
 
 - (void)reviseNavigationBarItems
@@ -118,10 +99,15 @@
         self.barView.exitButton.hidden = YES;
     } else {
         
-        if (!self.originalWebViewDelegate) {
-            if (self.webView.delegate != nil)
-                self.originalWebViewDelegate = self.webView.delegate;
+        if (!self.webView.delegate) {
             self.webView.delegate = self;
+        } else {
+            
+            if (self.webView.delegate != self) {
+                self.originalWebViewDelegate = self.webView.delegate;
+                self.webView.delegate = self;
+            }
+            
         }
         
         if (![self.webView canGoBack]) {
@@ -142,6 +128,7 @@
             self.barView.backButton.hidden = YES;
         }
     }
+    
 }
 
 - (void)didClickBackButton:(UIButton *)button

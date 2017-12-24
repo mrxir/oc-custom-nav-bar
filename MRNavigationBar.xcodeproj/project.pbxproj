@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19B02C12D41DDD33DC268DDC /* libPods-MRNavigationBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D544326650133F1BB02C33 /* libPods-MRNavigationBar.a */; };
+		2E12A4651FEF72D300B9D562 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E12A4641FEF72D300B9D562 /* SecondViewController.m */; };
+		2E3BF76E1FEFC46D006B05B5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BF76D1FEFC46D006B05B5 /* FirstViewController.m */; };
+		2E3BF7711FEFC6D4006B05B5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BF7701FEFC6D4006B05B5 /* BaseViewController.m */; };
 		67F0FF721FED13A800E533EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F0FF711FED13A800E533EE /* AppDelegate.m */; };
-		67F0FF751FED13A800E533EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F0FF741FED13A800E533EE /* ViewController.m */; };
 		67F0FF781FED13A800E533EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F0FF761FED13A800E533EE /* Main.storyboard */; };
 		67F0FF7A1FED13A800E533EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F0FF791FED13A800E533EE /* Assets.xcassets */; };
 		67F0FF7D1FED13A800E533EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F0FF7B1FED13A800E533EE /* LaunchScreen.storyboard */; };
@@ -20,11 +23,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02D544326650133F1BB02C33 /* libPods-MRNavigationBar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRNavigationBar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E12A4631FEF72D300B9D562 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		2E12A4641FEF72D300B9D562 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		2E3BF76C1FEFC46D006B05B5 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		2E3BF76D1FEFC46D006B05B5 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		2E3BF76F1FEFC6D4006B05B5 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		2E3BF7701FEFC6D4006B05B5 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		6620877397EE3ABD44394267 /* Pods-MRNavigationBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRNavigationBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRNavigationBar/Pods-MRNavigationBar.release.xcconfig"; sourceTree = "<group>"; };
 		67F0FF6D1FED13A800E533EE /* MRNavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRNavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F0FF701FED13A800E533EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		67F0FF711FED13A800E533EE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		67F0FF731FED13A800E533EE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		67F0FF741FED13A800E533EE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		67F0FF771FED13A800E533EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67F0FF791FED13A800E533EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67F0FF7C1FED13A800E533EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +44,7 @@
 		67F0FF8A1FED14BC00E533EE /* MRNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRNavigationBar.xib; sourceTree = "<group>"; };
 		67F0FF9B1FED3ECA00E533EE /* MRNavigationBar.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MRNavigationBar.podspec; sourceTree = "<group>"; };
 		67F0FF9D1FED4E7500E533EE /* MRNavigationBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MRNavigationBar.bundle; sourceTree = "<group>"; };
+		FB9234DE7B23F2D34F62D81F /* Pods-MRNavigationBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRNavigationBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRNavigationBar/Pods-MRNavigationBar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B02C12D41DDD33DC268DDC /* libPods-MRNavigationBar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +66,8 @@
 				67F0FF861FED147C00E533EE /* Classes */,
 				67F0FF6F1FED13A800E533EE /* MRNavigationBar */,
 				67F0FF6E1FED13A800E533EE /* Products */,
+				9BC7308BE073C88ED314FDF1 /* Pods */,
+				736226F2106993222B3DD7F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +84,12 @@
 			children = (
 				67F0FF701FED13A800E533EE /* AppDelegate.h */,
 				67F0FF711FED13A800E533EE /* AppDelegate.m */,
-				67F0FF731FED13A800E533EE /* ViewController.h */,
-				67F0FF741FED13A800E533EE /* ViewController.m */,
+				2E3BF76F1FEFC6D4006B05B5 /* BaseViewController.h */,
+				2E3BF7701FEFC6D4006B05B5 /* BaseViewController.m */,
+				2E3BF76C1FEFC46D006B05B5 /* FirstViewController.h */,
+				2E3BF76D1FEFC46D006B05B5 /* FirstViewController.m */,
+				2E12A4631FEF72D300B9D562 /* SecondViewController.h */,
+				2E12A4641FEF72D300B9D562 /* SecondViewController.m */,
 				67F0FF761FED13A800E533EE /* Main.storyboard */,
 				67F0FF791FED13A800E533EE /* Assets.xcassets */,
 				67F0FF7B1FED13A800E533EE /* LaunchScreen.storyboard */,
@@ -93,6 +110,23 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		736226F2106993222B3DD7F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02D544326650133F1BB02C33 /* libPods-MRNavigationBar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BC7308BE073C88ED314FDF1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB9234DE7B23F2D34F62D81F /* Pods-MRNavigationBar.debug.xcconfig */,
+				6620877397EE3ABD44394267 /* Pods-MRNavigationBar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67F0FF831FED13A800E533EE /* Build configuration list for PBXNativeTarget "MRNavigationBar" */;
 			buildPhases = (
+				CCB791E1CBF780EFC75437A2 /* [CP] Check Pods Manifest.lock */,
 				67F0FF691FED13A800E533EE /* Sources */,
 				67F0FF6A1FED13A800E533EE /* Frameworks */,
 				67F0FF6B1FED13A800E533EE /* Resources */,
+				BD36689ACA73FE6DD08C8894 /* [CP] Embed Pods Frameworks */,
+				8E894D6318AB38EAA7D73A30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -162,14 +199,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8E894D6318AB38EAA7D73A30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRNavigationBar/Pods-MRNavigationBar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD36689ACA73FE6DD08C8894 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRNavigationBar/Pods-MRNavigationBar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCB791E1CBF780EFC75437A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MRNavigationBar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		67F0FF691FED13A800E533EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E12A4651FEF72D300B9D562 /* SecondViewController.m in Sources */,
+				2E3BF76E1FEFC46D006B05B5 /* FirstViewController.m in Sources */,
 				67F0FF891FED14A100E533EE /* MRNavigationBar.m in Sources */,
-				67F0FF751FED13A800E533EE /* ViewController.m in Sources */,
 				67F0FF801FED13A800E533EE /* main.m in Sources */,
+				2E3BF7711FEFC6D4006B05B5 /* BaseViewController.m in Sources */,
 				67F0FF721FED13A800E533EE /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +392,7 @@
 		};
 		67F0FF841FED13A800E533EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9234DE7B23F2D34F62D81F /* Pods-MRNavigationBar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -317,6 +408,7 @@
 		};
 		67F0FF851FED13A800E533EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6620877397EE3ABD44394267 /* Pods-MRNavigationBar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
