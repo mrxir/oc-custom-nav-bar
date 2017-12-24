@@ -16,8 +16,6 @@
 
 @property (nonatomic, assign) id<UIWebViewDelegate> originalWebViewDelegate;
 
-@property (nonatomic, assign) id<UIWebViewDelegate> webViewDelegate;
-
 @property (nonatomic, weak) __kindof UIWebView *webView;
 
 @end
