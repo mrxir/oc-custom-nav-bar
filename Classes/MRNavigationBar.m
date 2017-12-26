@@ -8,6 +8,17 @@
 
 #import "MRNavigationBar.h"
 
+@implementation _BackgroundView
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    [super setBackgroundColor:backgroundColor];
+    
+    self.navigationBar.barView.systemBar.barTintColor = backgroundColor;
+}
+
+@end
+
 @implementation _BarView
 
 @end
@@ -25,14 +36,14 @@
 - (void)setTitle:(NSString *)title
 {
     _title = title;
-    
+
     self.barView.systemBar.topItem.title = _title;
 }
 
 - (void)setTitleColor:(UIColor *)titleColor
 {
     _titleColor = titleColor;
-    
+
     NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
     titleTextAttributes[NSForegroundColorAttributeName] = _titleColor;
     titleTextAttributes[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17];
@@ -43,7 +54,7 @@
 - (void)setTintColor:(UIColor *)tintColor
 {
     _tintColor = tintColor;
-    
+
     self.barView.systemBar.tintColor = _tintColor;
 }
 
@@ -66,8 +77,10 @@
 {
     [super awakeFromNib];
     
+    self.backgroundView.navigationBar = self;
+    
     self.barView.systemBar.translucent = NO;
-    self.barView.systemBar.barTintColor = self.backgroundColor;
+    self.barView.systemBar.barTintColor = self.backgroundView.backgroundColor;
     
     UIImage *backImage = [UIImage imageWithContentsOfFile:[self pathForResource:@"back" type:@"png"]];
     

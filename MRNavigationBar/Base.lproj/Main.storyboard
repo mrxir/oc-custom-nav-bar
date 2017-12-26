@@ -61,6 +61,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IG9-hc-lpv" customClass="MRNavigationBar">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKk-5g-9p4" customClass="_BackgroundView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BY0-j7-m4S" customClass="_BarView">
                                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                         <subviews>
@@ -121,11 +125,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hKk-5g-9p4" secondAttribute="bottom" id="7mh-A4-qqs"/>
+                                    <constraint firstItem="hKk-5g-9p4" firstAttribute="top" secondItem="IG9-hc-lpv" secondAttribute="top" id="BCZ-h2-VEq"/>
+                                    <constraint firstItem="hKk-5g-9p4" firstAttribute="leading" secondItem="IG9-hc-lpv" secondAttribute="leading" id="IC8-nC-9X1"/>
                                     <constraint firstItem="BY0-j7-m4S" firstAttribute="leading" secondItem="IG9-hc-lpv" secondAttribute="leading" id="QAv-WM-MCY"/>
                                     <constraint firstAttribute="bottom" secondItem="BY0-j7-m4S" secondAttribute="bottom" id="Rz7-3z-udj"/>
+                                    <constraint firstAttribute="trailing" secondItem="hKk-5g-9p4" secondAttribute="trailing" id="Smp-Au-IzN"/>
                                     <constraint firstAttribute="trailing" secondItem="BY0-j7-m4S" secondAttribute="trailing" id="sk8-A3-pBC"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="backgroundView" destination="hKk-5g-9p4" id="hg9-xs-EvL"/>
                                     <outlet property="barView" destination="BY0-j7-m4S" id="04b-51-Anu"/>
                                     <outlet property="controller" destination="vxH-Pu-dlU" id="6R2-01-YrK"/>
                                 </connections>

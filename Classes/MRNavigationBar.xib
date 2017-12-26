@@ -15,6 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpb-RA-n9r" customClass="_BackgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="19r-bA-JZB" customClass="_BarView">
                     <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                     <subviews>
@@ -73,14 +77,19 @@
                     </connections>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.97723221778869629" green="0.97721385955810547" blue="0.97722625732421875" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="bpb-RA-n9r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AkP-OI-k3c"/>
                 <constraint firstItem="19r-bA-JZB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Csb-cV-Bcz"/>
                 <constraint firstAttribute="bottom" secondItem="19r-bA-JZB" secondAttribute="bottom" id="DRw-g0-RwG"/>
+                <constraint firstAttribute="trailing" secondItem="bpb-RA-n9r" secondAttribute="trailing" id="VMf-4f-OFZ"/>
                 <constraint firstAttribute="trailing" secondItem="19r-bA-JZB" secondAttribute="trailing" id="WAA-2Z-rLA"/>
+                <constraint firstItem="bpb-RA-n9r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WuY-VY-MAX"/>
+                <constraint firstAttribute="bottom" secondItem="bpb-RA-n9r" secondAttribute="bottom" id="tdJ-rX-SRT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="backgroundView" destination="bpb-RA-n9r" id="jiH-yS-Gbi"/>
                 <outlet property="barView" destination="19r-bA-JZB" id="2Fm-Ez-2hj"/>
             </connections>
             <point key="canvasLocation" x="-273.5" y="-429"/>

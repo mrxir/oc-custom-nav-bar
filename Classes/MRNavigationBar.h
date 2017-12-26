@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class MRNavigationBar;
+
+@interface _BackgroundView : UIView
+
+@property (nonatomic, weak) MRNavigationBar *navigationBar;
+
+@end
+
+
 @interface _BarView : UIView
 
 @property (nonatomic, weak) IBOutlet UINavigationBar *systemBar;
@@ -27,6 +36,8 @@
 @property (nonatomic, strong) UIColor *titleColor;
 
 @property (nonatomic, strong) UIColor *tintColor;
+
+@property (nonatomic, weak) IBOutlet _BackgroundView *backgroundView;
 
 @property (nonatomic, weak) IBOutlet _BarView *barView;
 
