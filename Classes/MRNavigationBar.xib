@@ -32,16 +32,17 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qb-9S-CgS">
-                                                    <rect key="frame" x="-10" y="0.0" width="55" height="44"/>
+                                                    <rect key="frame" x="-10" y="0.0" width="44" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54c-yQ-EFS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="55" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                             <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <state key="normal" title="返回"/>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="7MP-bI-i95"/>
+                                                        <constraint firstAttribute="width" constant="44" id="7MP-bI-i95"/>
                                                         <constraint firstItem="54c-yQ-EFS" firstAttribute="top" secondItem="1Qb-9S-CgS" secondAttribute="top" id="7eq-1E-AlO"/>
                                                         <constraint firstAttribute="trailing" secondItem="54c-yQ-EFS" secondAttribute="trailing" id="DcH-tJ-xsk"/>
                                                         <constraint firstItem="54c-yQ-EFS" firstAttribute="leading" secondItem="1Qb-9S-CgS" secondAttribute="leading" id="Yqd-wD-tsp"/>
@@ -49,10 +50,11 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxH-ti-kV6">
-                                                    <rect key="frame" x="45" y="0.0" width="55" height="44"/>
+                                                    <rect key="frame" x="34" y="0.0" width="44" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHI-g6-eBm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="55" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                             <state key="normal" title="关闭"/>
                                                         </button>
                                                     </subviews>
@@ -61,7 +63,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="hHI-g6-eBm" secondAttribute="trailing" id="Sfy-SR-PoH"/>
                                                         <constraint firstAttribute="bottom" secondItem="hHI-g6-eBm" secondAttribute="bottom" id="e3b-hv-GrI"/>
                                                         <constraint firstItem="hHI-g6-eBm" firstAttribute="leading" secondItem="LxH-ti-kV6" secondAttribute="leading" id="hLC-4z-VGE"/>
-                                                        <constraint firstAttribute="width" constant="55" id="pza-D4-341"/>
+                                                        <constraint firstAttribute="width" constant="44" id="pza-D4-341"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
