@@ -173,7 +173,7 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    NSLog(@"%s", __FUNCTION__);
+    //NSLog(@"%s", __FUNCTION__);
     
     if ([self.originalWebViewDelegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
         return [self.originalWebViewDelegate webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
@@ -186,7 +186,7 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    NSLog(@"%s", __FUNCTION__);
+    //NSLog(@"%s", __FUNCTION__);
     
     if ([self.originalWebViewDelegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
         [self.originalWebViewDelegate webViewDidStartLoad:webView];
@@ -197,7 +197,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSLog(@"%s", __FUNCTION__);
+    //NSLog(@"%s", __FUNCTION__);
     
     if ([self.originalWebViewDelegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
         [self.originalWebViewDelegate webViewDidFinishLoad:webView];
@@ -208,7 +208,7 @@
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    NSLog(@"%s", __FUNCTION__);
+    //NSLog(@"%s", __FUNCTION__);
     
     if ([self.originalWebViewDelegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
         [self.originalWebViewDelegate webView:webView didFailLoadWithError:error];
