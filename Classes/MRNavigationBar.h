@@ -8,38 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
-@class MRNavigationBar;
-
-@interface _BackgroundView : UIView
-
-@property (nonatomic, weak) MRNavigationBar *navigationBar;
-
-@end
-
-
-@interface _BarView : UIView
-
-@property (nonatomic, weak) IBOutlet UINavigationBar *systemBar;
-
-/** pop 或 web view goback */
-@property (nonatomic, weak) IBOutlet UIButton *backButton;
-
-/** web view pop */
-@property (nonatomic, weak) IBOutlet UIButton *exitButton;
-
-@end
-
 @interface MRNavigationBar : UIView
 
-@property (nonatomic, copy) NSString *title;
+#pragma mark - center
 
-@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, weak) IBOutlet UILabel *centerLabel;
+
+#pragma mark - left
+
+@property (nonatomic, weak) IBOutlet UIButton *leftButton1;
+
+@property (nonatomic, weak) IBOutlet UIButton *leftButton2;
+
+#pragma mark - right
+
+@property (nonatomic, weak) IBOutlet UIButton *rightButton1;
+
+@property (nonatomic, weak) IBOutlet UIButton *rightButton2;
+
+#pragma mark - setup
 
 @property (nonatomic, strong) UIColor *tintColor;
-
-@property (nonatomic, weak) IBOutlet _BackgroundView *backgroundView;
-
-@property (nonatomic, weak) IBOutlet _BarView *barView;
 
 @property (nonatomic, assign) IBOutlet UIViewController *controller;
 

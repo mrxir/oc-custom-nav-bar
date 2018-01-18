@@ -24,8 +24,6 @@
     
     self.title = @"🛋";
     
-    self.navigationBar.backgroundView.backgroundColor = [UIColor greenColor];
-    
     self.navigationBar.tintColor = [UIColor redColor];
     
     self.webView.delegate = self;

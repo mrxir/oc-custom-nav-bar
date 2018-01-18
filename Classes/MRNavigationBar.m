@@ -8,165 +8,108 @@
 
 #import "MRNavigationBar.h"
 
-@implementation _BackgroundView
-
-- (void)setBackgroundColor:(UIColor *)backgroundColor
-{
-    [super setBackgroundColor:backgroundColor];
-    
-    self.navigationBar.barView.systemBar.barTintColor = backgroundColor;
-}
-
-@end
-
-@implementation _BarView
-
-@end
-
 @interface MRNavigationBar ()<UIGestureRecognizerDelegate, UIWebViewDelegate>
+
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *leftButton1Width;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *leftButton2Width;
+
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *rightButton1Width;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *rightButton2Width;
 
 @property (nonatomic, assign) id<UIWebViewDelegate> originalWebViewDelegate;
 
-@property (nonatomic, weak) __kindof UIWebView *webView;
+@property (nonatomic, strong, readonly) __kindof UIWebView *webView;
 
 @end
 
 @implementation MRNavigationBar
 
-- (void)setTitle:(NSString *)title
+#pragma mark - setter and getter
+
+@synthesize webView = _webView;
+
+- (UIWebView *)webView
 {
-    _title = title;
-
-    self.barView.systemBar.topItem.title = _title;
-}
-
-- (void)setTitleColor:(UIColor *)titleColor
-{
-    _titleColor = titleColor;
-
-    NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
-    titleTextAttributes[NSForegroundColorAttributeName] = _titleColor;
-    titleTextAttributes[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17];
-    self.barView.systemBar.titleTextAttributes = titleTextAttributes;
-
-}
-
-- (void)setTintColor:(UIColor *)tintColor
-{
-    _tintColor = tintColor;
-
-    self.barView.systemBar.tintColor = _tintColor;
-}
-
-- (void)willMoveToWindow:(UIWindow *)newWindow
-{
-    [super willMoveToWindow:newWindow];
-    
-    NSString *title = nil;
-    if (self.barView.systemBar.topItem.title) title = self.barView.systemBar.topItem.title;
-    if (self.controller.title) title = self.controller.title;
-    if (!title) title = @"Title";
-    
-    [self setTitle:title];
-    
-    [self reviseNavigationBarItems];
-   
-}
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    
-    self.backgroundView.navigationBar = self;
-    
-    self.barView.systemBar.translucent = NO;
-    self.barView.systemBar.barTintColor = self.backgroundView.backgroundColor;
-    
-    UIImage *backImage = [UIImage imageWithContentsOfFile:[self pathForResource:@"back" type:@"png"]];
-    
-    [self.barView.backButton setImage:backImage forState:UIControlStateNormal];
-    
-    [self.barView.backButton addTarget:self action:@selector(didClickBackButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.barView.exitButton addTarget:self action:@selector(didClickExitButton:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.controller.view bringSubviewToFront:self];
-}
-
-- (void)reviseNavigationBarItems
-{
-    // find web view
-    if (!self.webView) {
-        
+    if (_webView != nil) {
+        return _webView;
+    } else {
         for (id view in self.controller.view.subviews) {
             if ([view isKindOfClass:[UIWebView class]]) {
-                self.webView = view;
-                break;
+                return _webView = view;
             }
         }
-        
+        return _webView;
     }
+}
+
+- (void)didMoveToWindow
+{
+    [super didMoveToWindow];
     
-    if (self.webView == nil) {
-        self.barView.exitButton.hidden = YES;
-    } else {
-        
-        if (!self.webView.delegate) {
-            self.webView.delegate = self;
-        } else {
-            
-            if (self.webView.delegate != self) {
-                self.originalWebViewDelegate = self.webView.delegate;
-                self.webView.delegate = self;
-            }
-            
-        }
-        
-        if (![self.webView canGoBack]) {
-            self.barView.exitButton.hidden = YES;
-        } else {
-            self.barView.exitButton.hidden = NO;
-        }
-        
-    }
+    [self.controller.view bringSubviewToFront:self];
     
-    // find nvaigation child view controller
-    if (self.controller.navigationController.viewControllers.count > 1) {
-        if (self.controller.navigationController.topViewController == self.controller) {
-            self.barView.backButton.hidden = NO;
-        }
-    } else {
-        if (self.controller.navigationController.topViewController == self.controller) {
-            self.barView.backButton.hidden = YES;
-        }
-    }
+    [self setupNavigationBarItemAppearance];
+    
+    [self setupNavigationBarItemActions];
+    
+    [self delegateWebViewIfNeed];
     
 }
 
-- (void)didClickBackButton:(UIButton *)button
+- (void)setupNavigationBarItemAppearance
 {
-    if (self.webView == nil) {
-        [self.controller.navigationController popViewControllerAnimated:YES];
+    // isn't root
+    if (self.controller.navigationController.viewControllers.count > 1) {
+        
+        [self _showLeftButtonWithType:@"Pop"];
+        
+        if (self.webView != nil) {
+            
+            if ([self.webView canGoBack]) {
+                [self _showLeftButtonWithType:@"GoBack"];
+            } else {
+                [self _hideLeftButton2WhenCanNotGoBack];
+            }
+            
+        }
+        
     } else {
+        
+        // is root
+        [self _hideLeftButtonsWhenCanNotPop];
+    }
+}
 
+- (void)setupNavigationBarItemActions
+{
+    [self.leftButton1 addTarget:self action:@selector(buttonActionHandler:) forControlEvents:UIControlEventTouchUpInside];
+    [self.leftButton2 addTarget:self action:@selector(buttonActionHandler:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)delegateWebViewIfNeed
+{
+    if (!self.webView.delegate) {
+        self.webView.delegate = self;
+    } else {
+        if (self.webView.delegate != self) {
+            self.originalWebViewDelegate = self.webView.delegate;
+            self.webView.delegate = self;
+        }
+    }
+}
+
+- (void)buttonActionHandler:(UIButton *)button
+{
+    if (self.webView != nil) {
         if ([self.webView canGoBack]) {
-            [self.webView goBack];
-
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                if (![self.webView canGoBack]) {
-                    self.barView.exitButton.hidden = YES;
-                }
-            });
-
+            if (button == self.leftButton1) [self.webView goBack];
+            if (button == self.leftButton2) [self.controller.navigationController popViewControllerAnimated:YES];
         } else {
             [self.controller.navigationController popViewControllerAnimated:YES];
         }
-
+    } else {
+        [self.controller.navigationController popViewControllerAnimated:YES];
     }
-}
-
-- (void)didClickExitButton:(UIButton *)button
-{
-    [self.controller.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - web view delegate
@@ -179,7 +122,7 @@
         return [self.originalWebViewDelegate webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
     }
     
-    [self reviseNavigationBarItems];
+    [self setupNavigationBarItemAppearance];
     
     return YES;
 }
@@ -192,7 +135,7 @@
         [self.originalWebViewDelegate webViewDidStartLoad:webView];
     }
     
-    [self reviseNavigationBarItems];
+    [self setupNavigationBarItemAppearance];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
@@ -203,7 +146,7 @@
         [self.originalWebViewDelegate webViewDidFinishLoad:webView];
     }
     
-    [self reviseNavigationBarItems];
+    [self setupNavigationBarItemAppearance];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -214,7 +157,7 @@
         [self.originalWebViewDelegate webView:webView didFailLoadWithError:error];
     }
     
-    [self reviseNavigationBarItems];
+    [self setupNavigationBarItemAppearance];
 }
 
 /*
@@ -224,6 +167,45 @@
     // Drawing code
 }
 */
+
+#pragma mark - # PRIVATE METHOD #
+
+#pragma mark - show
+
+- (void)_showLeftButtonWithType:(NSString *)popOrGoBack
+{
+    if ([popOrGoBack isEqualToString:@"Pop"]) {
+        
+        [self.leftButton1 setImage:[UIImage imageWithContentsOfFile:[self pathForResource:@"back" type:@"png"]] forState:UIControlStateNormal];
+        self.leftButton1Width.constant = 50;
+        
+        
+    } else if ([popOrGoBack isEqualToString:@"GoBack"]) {
+        
+        [self.leftButton1 setImage:[UIImage imageWithContentsOfFile:[self pathForResource:@"back" type:@"png"]] forState:UIControlStateNormal];
+        self.leftButton1Width.constant = 50;
+        
+        [self.leftButton2 setImage:[UIImage imageWithContentsOfFile:[self pathForResource:@"close" type:@"png"]] forState:UIControlStateNormal];
+        self.leftButton2Width.constant = 50;
+        
+    }
+    
+}
+
+#pragma mark - hide
+
+- (void)_hideLeftButton2WhenCanNotGoBack
+{
+    NSLog(@"%s", __FUNCTION__);
+    self.leftButton2Width.constant = 0;
+}
+
+- (void)_hideLeftButtonsWhenCanNotPop
+{
+    NSLog(@"%s", __FUNCTION__);
+    self.leftButton1Width.constant = 0;
+    self.leftButton2Width.constant = 0;
+}
 
 #pragma mark - unit
 
