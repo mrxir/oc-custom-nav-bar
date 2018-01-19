@@ -27,7 +27,6 @@
                                     <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="zHA-nm-gm4" secondAttribute="bottom" id="4E6-AG-TPg"/>
                                 <constraint firstAttribute="width" constant="44" id="AMt-oe-TOi"/>
@@ -46,7 +45,6 @@
                                     <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="Bde-60-3nr" firstAttribute="top" secondItem="eS2-vY-tiD" secondAttribute="top" id="9JG-D8-Hin"/>
                                 <constraint firstItem="Bde-60-3nr" firstAttribute="leading" secondItem="eS2-vY-tiD" secondAttribute="leading" id="CSN-43-w6L"/>
@@ -84,7 +82,6 @@
                                     <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="3zR-cs-5gR" secondAttribute="trailing" id="3uI-he-aFl"/>
                                 <constraint firstAttribute="width" constant="44" id="FvD-ar-4vx"/>
@@ -103,7 +100,6 @@
                                     <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="79S-SH-nqT" secondAttribute="bottom" id="2YB-8D-SDW"/>
                                 <constraint firstAttribute="height" constant="44" id="Lfd-Fq-wYz"/>
