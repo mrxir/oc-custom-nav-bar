@@ -140,9 +140,13 @@
             <connections>
                 <outlet property="centerLabel" destination="4yN-bF-nyd" id="7pa-Il-VDk"/>
                 <outlet property="leftButton1" destination="zHA-nm-gm4" id="3rC-Kx-cDy"/>
+                <outlet property="leftButton1Width" destination="AMt-oe-TOi" id="ZGy-84-oJt"/>
                 <outlet property="leftButton2" destination="Bde-60-3nr" id="hc6-pd-pMx"/>
+                <outlet property="leftButton2Width" destination="Lkt-yy-tER" id="xM3-Bu-i3p"/>
                 <outlet property="rightButton1" destination="3zR-cs-5gR" id="n2y-V6-lMu"/>
+                <outlet property="rightButton1Width" destination="FvD-ar-4vx" id="cv1-ct-ydS"/>
                 <outlet property="rightButton2" destination="79S-SH-nqT" id="Iak-Bm-HTg"/>
+                <outlet property="rightButton2Width" destination="Vv4-d5-yw5" id="Fc8-0f-6PC"/>
             </connections>
             <point key="canvasLocation" x="34" y="55"/>
         </view>
