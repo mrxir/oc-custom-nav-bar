@@ -59,9 +59,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76X-UT-OjE" userLabel="CENTER">
                             <rect key="frame" x="90" y="0.0" width="140" height="44"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4yN-bF-nyd">
-                                    <rect key="frame" x="4" y="4" width="112" height="36"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4yN-bF-nyd">
+                                    <rect key="frame" x="4" y="4" width="132" height="36"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -69,6 +68,10 @@
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="Soy-RX-zWT"/>
+                                <constraint firstAttribute="bottom" secondItem="4yN-bF-nyd" secondAttribute="bottom" constant="4" id="chw-y0-Ec5"/>
+                                <constraint firstItem="4yN-bF-nyd" firstAttribute="top" secondItem="76X-UT-OjE" secondAttribute="top" constant="4" id="ikH-8v-VEq"/>
+                                <constraint firstItem="4yN-bF-nyd" firstAttribute="leading" secondItem="76X-UT-OjE" secondAttribute="leading" constant="4" id="mQY-JL-Rt1"/>
+                                <constraint firstAttribute="trailing" secondItem="4yN-bF-nyd" secondAttribute="trailing" constant="4" id="rhG-4s-ktb"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ay-Jn-ujK" userLabel="R-1">
